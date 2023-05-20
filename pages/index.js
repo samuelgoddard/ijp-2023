@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIntroContext(true)
-    }, 2750);
+    }, 3000);
   },[]);
 
   return (
