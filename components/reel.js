@@ -5,7 +5,7 @@ export default function Reel() {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    let speed = 300
+    let speed = 600
 
     // Set an interval that updates the currentProject every 3 seconds on mobile to rotate the projects
     const i_id = setInterval(() => {
