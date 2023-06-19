@@ -27,7 +27,7 @@ export default function Reel() {
       <img className="w-full" src="/images/index.jpg" alt="Arc Architects" />
       {Array.from(Array(28), (e, i) => {
         return (
-          <div className={`absolute inset-0 ${i == currentImage ? 'z-[10]' : 'z-[1]'}`}>
+          <div className={`absolute inset-0 ${i == currentImage ? 'z-[10]' : 'z-[1]'}`} key={i}>
             <img className="w-full" src={`/images/IJP-REEL-${ i < 9 ? '0' : ''}${i+1}.jpg`} alt="Arc Architects" />
           </div>
         )
