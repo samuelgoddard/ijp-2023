@@ -59,8 +59,8 @@ export default function App({ Component, pageProps }) {
       <DefaultSeo {...SEO} /> 
       
       <IntroContext.Provider value={[introContext, setIntroContext]}>
-        <div className={`${AntiqueLegacy.variable} font-sans flex flex-col min-h-screen`}>
-          <LazyMotion features={domAnimation}>
+        <div className={`${AntiqueLegacy.variable} font-sans flex flex-col min-h-screen selection:bg-black selection:text-white`}>
+          {/* <LazyMotion features={domAnimation}>
           { !introContext && router.asPath == '/' && (
               <div className="fixed inset-0 z-[100] p-3 px-4 h-screen bg-white text-sm md:text-sm lg:text-sm leading-[1.15] md:leading-[1.15] lg:leading-[1.15] cursor-wait">
                 <m.div 
@@ -198,7 +198,7 @@ export default function App({ Component, pageProps }) {
                 </m.div>
               </div>
             )}
-          </LazyMotion>
+          </LazyMotion> */}
           
           <div className="w-full mb-auto self-start">
             <Header />

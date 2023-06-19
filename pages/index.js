@@ -4,6 +4,7 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { IntroContext } from 'context/intro'
 import { useContext, useEffect } from 'react'
+import Reel from '@/components/reel'
 
 export default function Home() {
   const [introContext, setIntroContext] = useContext(IntroContext);
@@ -27,7 +28,7 @@ export default function Home() {
           <m.article variants={fade}>
             <div className="flex flex-wrap w-full items-center justify-center">
               <div className="w-10/12 md:w-8/12 lg:w-7/12 max-w-[900px]">
-                <img className="w-full" src="/images/index.jpg" alt="Arc Architects" />
+                <Reel />
               </div>
             </div>
           </m.article>
