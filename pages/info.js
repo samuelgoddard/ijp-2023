@@ -31,7 +31,7 @@ export default function Info() {
               </div>
               <div className="w-full md:w-6/12 lg:w-[45%]">
                 <div className="md:w-11/12 lg:w-10/12 max-w-[720px]">
-                  <p>The studio of independent designer Isaac Powell. I've been working with clients, agencies, and individuals across all facets of brand and digital since 2014, helping them to create purposeful and refined work that's rooted in simplicity. I've worked with Ragged Edge, Paul Smith, Ingamana, Pitch, CUSP, and more.</p>
+                  <p>The studio of independent designer Isaac Powell. I&apos;ve been working with clients, agencies, and individuals across all facets of brand and digital since 2014, helping them to create purposeful and refined work that&apos;s rooted in simplicity. I&apos;ve worked with Ragged Edge, Paul Smith, Ingamana, Pitch, CUSP, and more.</p>
                 </div>
               </div>
             </div>
