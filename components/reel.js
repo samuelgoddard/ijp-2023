@@ -23,7 +23,9 @@ export default function Reel() {
   },[currentImage]);
 
   return(
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden grayscale">
+
+      {/* <span className="absolute bottom-0 left-0 block border-2 border-white w-8 h-8 m-4 rounded-full z-[11]"></span> */}
       <img className="w-full" src="/images/index.jpg" alt="Arc Architects" />
       {Array.from(Array(28), (e, i) => {
         return (
