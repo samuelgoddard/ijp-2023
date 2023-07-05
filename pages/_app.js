@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
     },
     hidden: { 
       opacity: 0,
-      transition: { delay: 2, duration: 0, ease: [0.83, 0, 0.17, 1] }
+      transition: { delay: 1, duration: 0, ease: [0.83, 0, 0.17, 1] }
     }
   }
 
@@ -45,39 +45,39 @@ export default function App({ Component, pageProps }) {
 
     setTimeout(() => {
       setIntroText2(true)
-    }, 200);
+    }, 100);
 
     setTimeout(() => {
       setIntroText3(true)
-    }, 400);
+    }, 200);
 
     setTimeout(() => {
       setIntroText4(true)
-    }, 600);
+    }, 300);
 
     setTimeout(() => {
       setIntroText5(true)
-    }, 800);
+    }, 400);
     
     setTimeout(() => {
       setIntroText6(true)
-    }, 1000);
+    }, 500);
     
     setTimeout(() => {
       setIntroText7(true)
-    }, 1200);
+    }, 600);
 
     setTimeout(() => {
       setIntroText8(true)
-    }, 1400);
+    }, 700);
 
     setTimeout(() => {
       setIntroText9(true)
-    }, 1600);
+    }, 800);
 
     setTimeout(() => {
       setIntroText10(true)
-    }, 1800);
+    }, 900);
   },[]);
 
   return (
@@ -85,7 +85,7 @@ export default function App({ Component, pageProps }) {
       <DefaultSeo {...SEO} /> 
       
       <IntroContext.Provider value={[introContext, setIntroContext]}>
-        <div className={`${AntiqueLegacy.variable} font-sans flex flex-col min-h-screen selection:bg-black selection:text-white`}>
+        <div className={`${AntiqueLegacy.variable} font-sans selection:bg-black selection:text-white`}>
           <LazyMotion features={domAnimation}>
           { !introContext && router.asPath == '/' && (
               <div className="fixed inset-0 z-[100] p-3 px-4 h-screen bg-white leading-[1.2] md:leading-[1.2] lg:leading-[1.2] cursor-wait">
@@ -93,7 +93,7 @@ export default function App({ Component, pageProps }) {
                   initial="visible"
                   animate="hidden"
                   variants={introFullEnd}
-                  transition={{ delay: 2000, duration: 0, ease: [0.83, 0, 0.17, 1] }}
+                  transition={{ delay: 1000, duration: 0, ease: [0.83, 0, 0.17, 1] }}
                   className="w-full h-full p-[10px] cursor-wait absolute inset-0"
                 >
                   <m.div 
@@ -143,17 +143,9 @@ export default function App({ Component, pageProps }) {
             )}
           </LazyMotion>
           
-          <div className="w-full mb-auto self-start">
-            <Header />
-          </div>
+          <Header />
 
-          <div className={`w-full ${router.asPath == '/info' ? 'mt-auto' : 'my-auto'}`}>
-            <Component {...pageProps} key={router.asPath} />
-          </div>
-          
-          <div className={`w-full self-end ${router.asPath == '/info' ? '' : 'mt-auto'}`}>
-            <Footer />
-          </div>
+          <Component {...pageProps} key={router.asPath} />
         </div>
       </IntroContext.Provider>
     </>
