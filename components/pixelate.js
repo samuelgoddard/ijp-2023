@@ -1,4 +1,5 @@
 import { IntroContext } from "@/context/intro";
+import { LongIntroContext } from "@/context/longIntro";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { ImagePixelated } from "react-pixelate";
@@ -6,34 +7,36 @@ import src from '/public/images/IJP-REEL-01.jpg'
 
 export default function Pixelate() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [introContext, setIntroContext] = useContext(IntroContext);
+  const [longIntroContext, setLongIntroContext] = useContext(LongIntroContext);
   const [pixelSize, setPixelSize] = useState(100);
 
   useEffect(() => {
-    let speed = 100
+    let speed = 150
     let speedReel = 500
 
-    const i_id2 = setInterval(() => {
-      if (currentImage == (28 - 1)) {
-        setCurrentImage(0)
-      } else {
-        setCurrentImage((introContext && pixelSize == 0) ? currentImage => currentImage+1 : currentImage => currentImage)
-      }
-    }, speedReel);
+    if (longIntroContext) {
+      const i_id2 = setInterval(() => {
+        if (currentImage == (28 - 1)) {
+          setCurrentImage(0)
+        } else {
+          setCurrentImage((longIntroContext && pixelSize == 0) ? currentImage => currentImage+1 : currentImage => currentImage)
+        }
+      }, speedReel);
 
-    const i_id = setInterval(() => {
-      if (pixelSize == (0)) {
-        setPixelSize(0)
-      } else {
-        setPixelSize(introContext ? pixelSize => pixelSize-20 : pixelSize => pixelSize)
-      }
-    }, speed);
+      const i_id = setInterval(() => {
+        if (pixelSize == (0)) {
+          setPixelSize(0)
+        } else {
+          setPixelSize(longIntroContext ? pixelSize => pixelSize-20 : pixelSize => pixelSize)
+        }
+      }, speed);
 
-    return () => {
-      clearInterval(i_id);
-      clearInterval(i_id2);
+      return () => {
+        clearInterval(i_id);
+        clearInterval(i_id2);
+      }
     }
-  },[currentImage, pixelSize, introContext]);
+  },[currentImage, pixelSize, longIntroContext]);
 
   return(
     <div className="relative w-full overflow-hidden grayscale">
