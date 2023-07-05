@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from 'react'
 import Pixelate from '@/components/pixelate'
 import Link from 'next/link'
 import { LongIntroContext } from '@/context/longIntro'
+import Clock from 'react-live-clock';
 
 export default function Home() {
   const [introContext, setIntroContext] = useContext(IntroContext);
@@ -24,7 +25,7 @@ export default function Home() {
     enter: {
       transition: {
         staggerChildren: 0.15,
-        delayChildren: introContext ? 0 : 1.1,
+        delayChildren: introContext ? 0.15 : 1.1,
         staggerDirection: 1
       }
     }
@@ -63,8 +64,9 @@ export default function Home() {
             <div className="p-3 px-4 w-full">
               <div className="grid grid-cols-12">
                 <div className={`col-start-1 col-span-3`}>
-                  <Link href="/" aria-label="Navigate to the home page">
+                  <Link href="/" aria-label="Navigate to the home page" className="inline-block group">
                     Isaac Powell
+                    <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                   </Link>
                 </div>
 
@@ -76,17 +78,17 @@ export default function Home() {
 
                 <div className={`col-start-11 col-span-2`}>
                   <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-auto justify-end">
-                    <Link href="/" aria-label="Navigate to the home page">
-                      <span className="flex items-center">
+                    <Link href="/" aria-label="Navigate to the home page" className="group">
+                      <span className="flex flex-wrap items-center">
                         <span className={`w-[12px] md:w-[13px] lg:w-[15px] h-[12px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px] bg-black`}></span>
-                        Reel
+                        <span className="flex-1">Reel <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span></span>
                       </span>
                     </Link>
 
-                    <Link href="/info" aria-label="Navigate to the info page">
+                    <Link href="/info" aria-label="Navigate to the info page" className="group">
                       <span className="flex items-center">
                         <span className={`w-[12px] md:w-[13px] lg:w-[15px] h-[12px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px]`}></span>
-                        Info
+                        <span className="flex-1">Info <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span></span>
                       </span>
                     </Link>
                   </nav>
@@ -107,22 +109,26 @@ export default function Home() {
               <footer className="p-3 px-4">
                 <div className="grid grid-cols-12">
                   <m.div variants={item} custom={5} className={`col-start-1 col-span-3`}>
-                    <a href="https://www.instagram.com/ijpowell" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/ijpowell" target="_blank" rel="noopener noreferrer" className="group inline-block">
                       Instagram
+                      <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                     </a>
                   </m.div>
                   
                   <m.div variants={item} custom={6} className={`col-start-4 col-span-6`}>
                     <span className="block mx-auto text-center flex-1">
-                      <span className="block mx-auto text-center flex-1">
-                        12:43:32 GMT
+                      <span className="block mx-auto text-center flex-1 tabular-nums">
+                        <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
                       </span>
                     </span>
                   </m.div>
                   
                   <m.div variants={item} custom={7} className={`col-start-10 lg:col-start-11 col-span-3 lg:col-span-2`}>
                     <div className="ml-auto w-auto text-right">
-                      <a href="mailto:hello@ijpowell.co.uk">Send An Email</a>
+                      <a href="mailto:hello@ijpowell.co.uk" className="group inline-block">
+                        Send An Email
+                        <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
+                      </a>
                     </div>
                   </m.div>
                 </div>
