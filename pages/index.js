@@ -23,29 +23,21 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIntroContext(true)
-    }, 0);
+    }, 2000);
   },[setIntroContext]);
 
   return (
     <Layout>
       <NextSeo title="Home" />
       
-      <LazyMotion features={domAnimation}>
-        <m.main
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          <article>
-            <div className="flex flex-wrap w-full items-center justify-center">
-              <div className="w-10/12 md:w-8/12 lg:w-7/12 max-w-[900px]">
-                {/* <Reel /> */}
-                <Pixelate />
-              </div>
-            </div>
-          </article>
-        </m.main>
-      </LazyMotion>
+      <article>
+        <div className="flex flex-wrap w-full items-center justify-center">
+          <div className="w-10/12 md:w-8/12 lg:w-7/12 max-w-[900px]">
+            {/* <Reel /> */}
+            <Pixelate />
+          </div>
+        </div>
+      </article>
     </Layout>
   )
 }

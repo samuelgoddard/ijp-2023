@@ -10,20 +10,20 @@ export default function Pixelate() {
   const [pixelSize, setPixelSize] = useState(100);
 
   useEffect(() => {
-    let speed = 120
+    let speed = 200
 
       const i_id = setInterval(() => {
         if (pixelSize == (0)) {
           setPixelSize(0)
         } else {
-          setPixelSize(pixelSize => pixelSize-20)
+          setPixelSize(introContext ? pixelSize => pixelSize-20 : pixelSize => pixelSize)
         }
       }, speed);
       return () => {
         clearInterval(i_id);
       }
 
-  },[pixelSize]);
+  },[pixelSize, introContext]);
 
   return(
     <div className="relative w-full overflow-hidden">

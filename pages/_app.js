@@ -1,5 +1,5 @@
 import '@/styles/main.css'
-import { AnimatePresence, LazyMotion, m, domAnimation } from 'framer-motion'
+import { LazyMotion, m, domAnimation } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import { AntiqueLegacy } from '@/helpers/fonts';
@@ -8,7 +8,6 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { IntroContext } from '@/context/intro'
 import { useEffect, useState } from 'react';
-import { TextScramble } from '@a7sc11u/scramble';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
@@ -30,7 +29,7 @@ export default function App({ Component, pageProps }) {
     },
     hidden: { 
       opacity: 0,
-      transition: { delay: 5, duration: 0, ease: [0.83, 0, 0.17, 1] }
+      transition: { delay: 2, duration: 0, ease: [0.83, 0, 0.17, 1] }
     }
   }
 
@@ -46,39 +45,39 @@ export default function App({ Component, pageProps }) {
 
     setTimeout(() => {
       setIntroText2(true)
-    }, 250);
+    }, 200);
 
     setTimeout(() => {
       setIntroText3(true)
-    }, 500);
+    }, 400);
 
     setTimeout(() => {
       setIntroText4(true)
-    }, 750);
+    }, 600);
 
     setTimeout(() => {
       setIntroText5(true)
-    }, 1000);
+    }, 800);
     
     setTimeout(() => {
       setIntroText6(true)
-    }, 1250);
+    }, 1000);
     
     setTimeout(() => {
       setIntroText7(true)
-    }, 1500);
+    }, 1200);
 
     setTimeout(() => {
       setIntroText8(true)
-    }, 1750);
+    }, 1400);
 
     setTimeout(() => {
       setIntroText9(true)
-    }, 2000);
+    }, 1600);
 
     setTimeout(() => {
       setIntroText10(true)
-    }, 2250);
+    }, 1800);
   },[]);
 
   return (
@@ -94,7 +93,7 @@ export default function App({ Component, pageProps }) {
                   initial="visible"
                   animate="hidden"
                   variants={introFullEnd}
-                  transition={{ delay: 3000, duration: 0, ease: [0.83, 0, 0.17, 1] }}
+                  transition={{ delay: 2000, duration: 0, ease: [0.83, 0, 0.17, 1] }}
                   className="w-full h-full p-[10px] cursor-wait absolute inset-0"
                 >
                   <m.div 
@@ -104,136 +103,36 @@ export default function App({ Component, pageProps }) {
                   >
                     <div className="w-full mt-auto overflow-hidden relative">
                       {introText1 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'Running build in Nottingham, UK (Mid) - sfo1'}
-                        />
+                        <span className="block">Running build in Nottingham, UK (Mid) - sfo1</span>
                       )}
 
                       {introText2 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'Cloning github.com/shiftwalk/ijp-2023 (Branch: main, Commit: 06ab843)'}
-                        />
+                        <span className="block">Cloning github.com/shiftwalk/ijp-2023 (Branch: main, Commit: 06ab843)</span>
                       )}
                       {introText3 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'Cloning completed: 222.005ms'}
-                        />
+                        <span className="block">Cloning completed: 222.005ms</span>
                       )}
                       {introText4 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'Running build'}
-                        />
+                        <span className="block">Running build</span>
                       )}
                       {introText5 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'info  - Compiled successfully'}
-                        />
+                        <span className="block">info  - Compiled successfully</span>
                       )}
                       {introText6 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'info  - Collecting page data...'}
-                        />
+                        <span className="block">info  - Collecting page data...</span>
                       )}
                       {introText7 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'info  - Generating static pages (2/2)'}
-                        />
+                        <span className="block">info  - Generating static pages (2/2)</span>
                       )}
                       {introText8 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'Deploying outputs...'}
-                        />
+                        <span className="block">ploying outputs...</span>
                       )}
                       {introText9 && (
-                        <TextScramble
-                          as="div"
-                          play={true}
-                          speed={0.15}
-                          scramble={4}
-                          step={25}
-                          stepInterval={1}
-                          seed={3}
-                          seedInterval={1}
-                          text={'Uploading build cache [1.48 MB]...'}
-                        />
+                        <span className="block">Uploading build cache [1.48 MB]...</span>
                       )}
                       {introText10 && (
                         <>
-                          <TextScramble
-                            as="span"
-                            play={true}
-                            speed={0.15}
-                            scramble={4}
-                            step={25}
-                            stepInterval={1}
-                            seed={3}
-                            seedInterval={1}
-                            text={'Site ready...'}
-                          />
+                          <span className="inline">Site ready</span>
                           <span className="inline cursor">...</span>
                         </>
                       )}
@@ -249,9 +148,7 @@ export default function App({ Component, pageProps }) {
           </div>
 
           <div className={`w-full ${router.asPath == '/info' ? 'mt-auto' : 'my-auto'}`}>
-            <AnimatePresence mode="wait" initial={true}>
-              <Component {...pageProps} key={router.asPath} />
-            </AnimatePresence>
+            <Component {...pageProps} key={router.asPath} />
           </div>
           
           <div className={`w-full self-end ${router.asPath == '/info' ? '' : 'mt-auto'}`}>
