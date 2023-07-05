@@ -11,7 +11,7 @@ export default function Pixelate() {
 
   useEffect(() => {
     let speed = 100
-    let speedReel = 250
+    let speedReel = 500
 
     const i_id2 = setInterval(() => {
       if (currentImage == (28 - 1)) {
@@ -37,7 +37,7 @@ export default function Pixelate() {
 
   return(
     <div className="relative w-full overflow-hidden grayscale">
-      <Image quality={80} className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
+      <Image priority quality={80} className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
       
       {Array.from(Array(28), (e, i) => {
         return (
@@ -48,8 +48,10 @@ export default function Pixelate() {
       })}
 
       { !pixelSize == 0 && (
-        <div className={`absolute inset-0 w-full h-full z-[11] bg-black py-[7.2%] px-[6.5%]`}>
-          <ImagePixelated src={'/images/IJP-REEL-01-scramble.jpg'} pixelSize={pixelSize} width={600} height={375} centered />
+        <div className={`absolute inset-0 w-full h-full z-[11]`}>
+          <div className="absolute inset-0 bg-black py-[7.2%] px-[6.5%]">
+            <ImagePixelated src={'/images/IJP-REEL-01-scramble.jpg'} pixelSize={pixelSize} width={600} height={375} centered />
+          </div>
         </div>
       )}
     </div>

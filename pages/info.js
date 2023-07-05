@@ -2,6 +2,7 @@ import Layout from '@/components/layout'
 import { NextSeo } from 'next-seo'
 import { useContext, useEffect, useState } from 'react'
 import { IntroContext } from '@/context/intro'
+import Link from 'next/link';
 
 export default function Info() {
   const [introContext, setIntroContext] = useContext(IntroContext);
@@ -14,6 +15,7 @@ export default function Info() {
   const [introText7, setIntroText7] = useState(false)
   const [introText8, setIntroText8] = useState(false)
   const [introText9, setIntroText9] = useState(false)
+  const [introText10, setIntroText10] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -55,7 +57,11 @@ export default function Info() {
     setTimeout(() => {
       setIntroText9(true)
     }, 900);
-  },[setIntroContext, setIntroText1, setIntroText2, setIntroText3, setIntroText4, setIntroText5, setIntroText6, setIntroText7, setIntroText8, setIntroText9]);
+    
+    setTimeout(() => {
+      setIntroText10(true)
+    }, 1000);
+  },[setIntroContext, setIntroText1, setIntroText2, setIntroText3, setIntroText4, setIntroText5, setIntroText6, setIntroText7, setIntroText8, setIntroText9, setIntroText10]);
 
   return (
     <Layout>
@@ -64,8 +70,14 @@ export default function Info() {
       <div className="flex flex-col min-h-screen">
         <div className="p-3 px-4 w-full">
           <div className="grid grid-cols-12">
+            <div className={`col-start-1 col-span-3 ${introText1 ? 'opacity-1' : 'opacity-0' }`}>
+              <Link href="/" aria-label="Navigate to the home page">
+                Isaac Powell
+              </Link>
+            </div>
+
             <div className="col-start-5 lg:col-start-7 col-span-4 lg:col-span-4 text-center lg:text-left">
-              <span className={`${introText1 ? 'opacity-1' : 'opacity-0' }`}>
+              <span className={`${introText2 ? 'opacity-1' : 'opacity-0' }`}>
                 <span>
                   Freelance Designer
                   {/* <TypeAnimation
@@ -77,12 +89,30 @@ export default function Info() {
                   /> */}
                 </span>
               </span>
-            </div>          
+            </div>
+
+            <div className={`col-start-11 col-span-2 ${introText3 ? 'opacity-1' : 'opacity-0' }`}>
+              <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-auto justify-end">
+                <Link href="/" aria-label="Navigate to the home page">
+                  <span className="flex items-center">
+                    <span className={`w-[12px] md:w-[13px] lg:w-[15px] h-[12px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px]`}></span>
+                    Reel
+                  </span>
+                </Link>
+
+                <Link href="/info" aria-label="Navigate to the info page">
+                  <span className="flex items-center">
+                    <span className={`w-[12px] md:w-[13px] lg:w-[15px] h-[12px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px] bg-black`}></span>
+                    Info
+                  </span>
+                </Link>
+              </nav>
+            </div>
           </div>
         </div>
       
         <article className="w-full mt-auto pt-16">
-          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText2 ? 'opacity-1' : 'opacity-0' }`}>
+          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText4 ? 'opacity-1' : 'opacity-0' }`}>
             <span className="block col-span-5 lg:col-span-6">
               <p>Bio</p>
             </span>
@@ -93,7 +123,7 @@ export default function Info() {
             </div>
           </div>
 
-          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText3 ? 'opacity-1' : 'opacity-0' }`}>
+          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText5 ? 'opacity-1' : 'opacity-0' }`}>
             <span className="block col-span-5 lg:col-span-6">
               <p>Capabilities</p>
             </span>
@@ -110,7 +140,7 @@ export default function Info() {
             </div>
           </div>
 
-          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText4 ? 'opacity-1' : 'opacity-0' }`}>
+          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText6 ? 'opacity-1' : 'opacity-0' }`}>
             <span className="block col-span-5 lg:col-span-6">
               <p>Recognition</p>
             </span>
@@ -150,7 +180,7 @@ export default function Info() {
             </div>
           </div>
 
-          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText5 ? 'opacity-1' : 'opacity-0' }`}>
+          <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText7 ? 'opacity-1' : 'opacity-0' }`}>
             <span className="block col-span-5 lg:col-span-6">
               <p>Development Partner</p>
             </span>
@@ -164,19 +194,19 @@ export default function Info() {
         
         <footer className="p-3 px-4">
           <div className="grid grid-cols-12">
-            <div className={`col-start-1 col-span-3 ${introText6 ? 'opacity-1' : 'opacity-0' }`}>
+            <div className={`col-start-1 col-span-3 ${introText8 ? 'opacity-1' : 'opacity-0' }`}>
               <a href="https://www.instagram.com/ijpowell" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
             </div>
               
-            <div className={`col-start-5 lg:col-start-7 col-span-4 text-center lg:text-left ${introText7 ? 'opacity-1' : 'opacity-0' }`}>
+            <div className={`col-start-5 lg:col-start-7 col-span-4 text-center lg:text-left ${introText9 ? 'opacity-1' : 'opacity-0' }`}>
               <span className="block flex-1">
                 12:43:32 GMT
               </span>
             </div>
             
-            <div className={`col-start-10 lg:col-start-11 col-span-3 lg:col-span-2 ${introText8 ? 'opacity-1' : 'opacity-0' }`}>
+            <div className={`col-start-10 lg:col-start-11 col-span-3 lg:col-span-2 ${introText10 ? 'opacity-1' : 'opacity-0' }`}>
               <div className="ml-auto w-auto text-right">
                 <a href="mailto:hello@ijpowell.co.uk">Send An Email</a>
               </div>
