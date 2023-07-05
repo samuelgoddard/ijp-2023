@@ -25,12 +25,12 @@ export default function Info() {
           exit="exit"
         >
           <m.div variants={fade}>
-            <div className="w-full flex flex-wrap p-3 px-4 md:mb-6">
-              <div className="w-full md:w-6/12 lg:w-[55%] mb-3 md:mb-0">
+            <div className="w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6">
+              <span className="block col-span-5 lg:col-span-6">
                 <p>Bio</p>
-              </div>
-              <div className="w-full md:w-6/12 lg:w-[45%]">
-                <div className="md:w-11/12 lg:w-10/12 max-w-[720px]">
+              </span>
+              <div className="col-span-5 lg:col-span-6">
+                <div className="w-full">
                   <p>The studio of independent designer Isaac Powell. I&apos;ve been working with clients, agencies, and individuals across all facets of brand and digital since 2014, helping them to create purposeful and refined work that&apos;s rooted in simplicity. I&apos;ve worked with Ragged Edge, Paul Smith, Ingamana, Pitch, CUSP, and more.</p>
                 </div>
               </div>

@@ -82,7 +82,7 @@ export default function App({ Component, pageProps }) {
       
       <IntroContext.Provider value={[introContext, setIntroContext]}>
         <div className={`${AntiqueLegacy.variable} font-sans flex flex-col min-h-screen selection:bg-black selection:text-white`}>
-          {/* <LazyMotion features={domAnimation}>
+          <LazyMotion features={domAnimation}>
           { !introContext && router.asPath == '/' && (
               <div className="fixed inset-0 z-[100] p-3 px-4 h-screen bg-white text-base md:text-base lg:text-base leading-[1.2] md:leading-[1.2] lg:leading-[1.2] cursor-wait">
                 <m.div 
@@ -224,7 +224,7 @@ export default function App({ Component, pageProps }) {
                 </m.div>
               </div>
             )}
-          </LazyMotion> */}
+          </LazyMotion>
           
           <div className="w-full mb-auto self-start">
             <Header />
