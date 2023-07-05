@@ -31,7 +31,7 @@ export default function Pixelate() {
       
       { !pixelSize == 0 && (
         <div className={`absolute inset-0 w-full h-full z-10 bg-black py-[7.2%] px-[6.5%]`}>
-          <ImagePixelated src={'/images/IJP-REEL-01-scramble.jpg'} pixelSize={pixelSize} width={1396} height={962} />
+          <ImagePixelated src={'/images/IJP-REEL-01-scramble.jpg'} pixelSize={pixelSize} width={1396} height={962} centered />
         </div>
       )}
     </div>
