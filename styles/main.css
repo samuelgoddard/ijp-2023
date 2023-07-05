@@ -14,7 +14,7 @@
 
 /* Simple defaults */
 body {
-  @apply font-sans antialiased text-black bg-white text-[15px] md:text-[19px] lg:text-[21px] tracking-tight md:tracking-tight lg:tracking-tight leading-tight md:leading-tight lg:leading-tight;
+  @apply font-sans antialiased text-black bg-white text-[15px] md:text-[19px] lg:text-[20px] tracking-tight md:tracking-tight lg:tracking-tight leading-tight md:leading-tight lg:leading-tight;
 }
 
 @supports  (height: 100dvh) {

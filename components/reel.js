@@ -1,26 +1,26 @@
-import { useEffect, useRef, useState } from "react";
+import { IntroContext } from "@/context/intro";
+import { useContext, useEffect, useRef, useState } from "react";
 
 export default function Reel() {
   const ref = useRef(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const [introContext, setIntroContext] = useContext(IntroContext);
 
   useEffect(() => {
-    let speed = 600
+    let speed = 550
 
-    // Set an interval that updates the currentProject every 3 seconds on mobile to rotate the projects
-    const i_id = setInterval(() => {
-      if (currentImage == (28 - 1)) {
-        // If we hit the cap (5)... Reset...
-        setCurrentImage(0)
-      } else {
-        // Else... Tick along...
-        setCurrentImage(currentImage => currentImage+1)
+      const i_id = setInterval(() => {
+        if (currentImage == (28 - 1)) {
+          setCurrentImage(0)
+        } else {
+          setCurrentImage(introContext ? currentImage => currentImage+1 : currentImage => currentImage)
+        }
+      }, speed);
+      return () => {
+        clearInterval(i_id);
       }
-    }, speed);
-    return () => {
-      clearInterval(i_id);
-    }
-  },[currentImage]);
+
+  },[currentImage, introContext]);
 
   return(
     <div className="relative w-full overflow-hidden grayscale">

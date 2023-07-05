@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }) {
   const [introText7, setIntroText7] = useState(false)
   const [introText8, setIntroText8] = useState(false)
   const [introText9, setIntroText9] = useState(false)
+  const [introText10, setIntroText10] = useState(false)
   const [introContext, setIntroContext] = useState(false);
   
   const introEnd = {
@@ -74,6 +75,10 @@ export default function App({ Component, pageProps }) {
     setTimeout(() => {
       setIntroText9(true)
     }, 2000);
+
+    setTimeout(() => {
+      setIntroText10(true)
+    }, 2250);
   },[]);
 
   return (
@@ -84,12 +89,12 @@ export default function App({ Component, pageProps }) {
         <div className={`${AntiqueLegacy.variable} font-sans flex flex-col min-h-screen selection:bg-black selection:text-white`}>
           <LazyMotion features={domAnimation}>
           { !introContext && router.asPath == '/' && (
-              <div className="fixed inset-0 z-[100] p-3 px-4 h-screen bg-white text-base md:text-base lg:text-base leading-[1.2] md:leading-[1.2] lg:leading-[1.2] cursor-wait">
+              <div className="fixed inset-0 z-[100] p-3 px-4 h-screen bg-white leading-[1.2] md:leading-[1.2] lg:leading-[1.2] cursor-wait">
                 <m.div 
                   initial="visible"
                   animate="hidden"
                   variants={introFullEnd}
-                  transition={{ delay: 5000, duration: 0, ease: [0.83, 0, 0.17, 1] }}
+                  transition={{ delay: 3000, duration: 0, ease: [0.83, 0, 0.17, 1] }}
                   className="w-full h-full p-[10px] cursor-wait absolute inset-0"
                 >
                   <m.div 
@@ -102,13 +107,13 @@ export default function App({ Component, pageProps }) {
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'INIT X.ROUTE—AAC33ND'}
+                          text={'Running build in Nottingham, UK (Mid) - sfo1'}
                         />
                       )}
 
@@ -116,105 +121,118 @@ export default function App({ Component, pageProps }) {
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'SEARCHING FOR PAGE ...'}
+                          text={'Cloning github.com/shiftwalk/ijp-2023 (Branch: main, Commit: 06ab843)'}
                         />
                       )}
                       {introText3 && (
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'SEARCHING FOR PAGE ...'}
+                          text={'Cloning completed: 222.005ms'}
                         />
                       )}
                       {introText4 && (
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'SEARCHING FOR PAGE ...'}
+                          text={'Running build'}
                         />
                       )}
                       {introText5 && (
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'STILL SEARCHING ...'}
+                          text={'info  - Compiled successfully'}
                         />
                       )}
                       {introText6 && (
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'FOUND ...'}
+                          text={'info  - Collecting page data...'}
                         />
                       )}
                       {introText7 && (
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'RETURN ... MSG-STATE-INIT'}
+                          text={'info  - Generating static pages (2/2)'}
                         />
                       )}
                       {introText8 && (
                         <TextScramble
                           as="div"
                           play={true}
-                          speed={1.25}
-                          scramble={1}
-                          step={1}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
                           stepInterval={1}
                           seed={3}
                           seedInterval={1}
-                          text={'IJP-23 RETURN ...'}
+                          text={'Deploying outputs...'}
                         />
                       )}
                       {introText9 && (
+                        <TextScramble
+                          as="div"
+                          play={true}
+                          speed={0.15}
+                          scramble={4}
+                          step={25}
+                          stepInterval={1}
+                          seed={3}
+                          seedInterval={1}
+                          text={'Uploading build cache [1.48 MB]...'}
+                        />
+                      )}
+                      {introText10 && (
                         <>
                           <TextScramble
                             as="span"
                             play={true}
-                            speed={1.25}
-                            scramble={1}
-                            step={1}
+                            speed={0.15}
+                            scramble={4}
+                            step={25}
                             stepInterval={1}
                             seed={3}
                             seedInterval={1}
-                            text={'IJPOWELL.CO.UK'}
+                            text={'Site ready...'}
                           />
                           <span className="inline cursor">...</span>
                         </>
