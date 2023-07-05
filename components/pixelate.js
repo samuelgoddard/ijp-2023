@@ -37,12 +37,12 @@ export default function Pixelate() {
 
   return(
     <div className="relative w-full overflow-hidden grayscale">
-      <Image className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
+      <Image quality={80} className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
       
       {Array.from(Array(28), (e, i) => {
         return (
           <div className={`absolute inset-0 ${i == currentImage ? 'z-[10]' : 'z-[1]'}`} key={i}>
-            <img className="w-full" src={`/images/IJP-REEL-${ i < 9 ? '0' : ''}${i+1}.jpg`} alt="Arc Architects" />
+            <Image quality={80} className="w-full" width={1396} height={962} src={`/images/IJP-REEL-${ i < 9 ? '0' : ''}${i+1}.jpg`} alt="Arc Architects" />
           </div>
         )
       })}
