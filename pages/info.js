@@ -38,69 +38,63 @@ export default function Info() {
     <Layout>
       <NextSeo title="Info" />
     
-      { introText1 && (
-        <div className="w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6">
-          <span className="block col-span-5 lg:col-span-6">
-            <p>Bio</p>
-          </span>
-          <div className="col-span-5 lg:col-span-6">
-            <div className="w-full max-w-[800px]">
-              <p>The studio of independent designer Isaac Powell. I&apos;ve been working with clients, agencies, and individuals across all facets of brand and digital since 2014, helping them to create purposeful and refined work that&apos;s rooted in simplicity. I&apos;ve worked with Ragged Edge, Paul Smith, Ingamana, Pitch, CUSP, and more.</p>
-            </div>
+      <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText1 ? 'opacity-1' : 'opacity-0' }`}>
+        <span className="block col-span-5 lg:col-span-6">
+          <p>Bio</p>
+        </span>
+        <div className="col-span-5 lg:col-span-6">
+          <div className="w-full max-w-[800px]">
+            <p>The studio of independent designer Isaac Powell. I&apos;ve been working with clients, agencies, and individuals across all facets of brand and digital since 2014, helping them to create purposeful and refined work that&apos;s rooted in simplicity. I&apos;ve worked with Ragged Edge, Paul Smith, Ingamana, Pitch, CUSP, and more.</p>
           </div>
         </div>
-      )}
-      
-      { introText2 && (
-        <div className="w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6">
-          <span className="block col-span-5 lg:col-span-6">
-            <p>Capabilities</p>
-          </span>
-          <div className="col-span-5 lg:col-span-6">
-            <div className="w-full max-w-[800px]">
-              <ul>
-                <li>Art Direction</li>
-                <li>Strategy</li>
-                <li>Brand Identity</li>
-                <li>Website Design</li>
-                <li>Interaction</li>
-              </ul>
-            </div>
+      </div>
+
+      <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText2 ? 'opacity-1' : 'opacity-0' }`}>
+        <span className="block col-span-5 lg:col-span-6">
+          <p>Capabilities</p>
+        </span>
+        <div className="col-span-5 lg:col-span-6">
+          <div className="w-full max-w-[800px]">
+            <ul>
+              <li>Art Direction</li>
+              <li>Strategy</li>
+              <li>Brand Identity</li>
+              <li>Website Design</li>
+              <li>Interaction</li>
+            </ul>
           </div>
         </div>
-      )}
-      { introText3 && (
-        <div className="w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6">
-          <span className="block col-span-5 lg:col-span-6">
-            <p>Recognition</p>
-          </span>
-          <div className="col-span-5 lg:col-span-6">
-            <div className="w-full max-w-[800px]">
-              <ul>
-                <li>FWA</li>
-                <li>Awwwards</li>
-                <li>Klikkentheke</li>
-                <li>The Brand Identity</li>
-                <li>Essential Design</li>
-                <li>SiteInspire</li>
-                <li>Typewolf</li>
-              </ul>
-            </div>
+      </div>
+
+      <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText3 ? 'opacity-1' : 'opacity-0' }`}>
+        <span className="block col-span-5 lg:col-span-6">
+          <p>Recognition</p>
+        </span>
+        <div className="col-span-5 lg:col-span-6">
+          <div className="w-full max-w-[800px]">
+            <ul>
+              <li>FWA</li>
+              <li>Awwwards</li>
+              <li>Klikkentheke</li>
+              <li>The Brand Identity</li>
+              <li>Essential Design</li>
+              <li>SiteInspire</li>
+              <li>Typewolf</li>
+            </ul>
           </div>
         </div>
-      )}
-      { introText4 && (
-        <div className="w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6">
-          <span className="block col-span-5 lg:col-span-6">
-            <p>Development Partner</p>
-          </span>
-          <div className="col-span-5 lg:col-span-6">
-            <div className="w-full max-w-[800px]">
-              <a target="_blank" rel="noopener noreferrer" href="https://samgoddard.co.uk">Sam Goddard</a>
-            </div>
+      </div>
+
+      <div className={`w-full grid grid-cols-10 lg:grid-cols-12 p-3 px-4 md:mb-6 ${introText4 ? 'opacity-1' : 'opacity-0' }`}>
+        <span className="block col-span-5 lg:col-span-6">
+          <p>Development Partner</p>
+        </span>
+        <div className="col-span-5 lg:col-span-6">
+          <div className="w-full max-w-[800px]">
+            <a target="_blank" rel="noopener noreferrer" href="https://samgoddard.co.uk">Sam Goddard</a>
           </div>
         </div>
-      )}
+      </div>
     </Layout>
   )
 }
