@@ -14,7 +14,8 @@
 
 /* Simple defaults */
 body {
-  @apply font-sans antialiased text-black bg-white text-[15px] md:text-[19px] lg:text-[20px] tracking-tight md:tracking-tight lg:tracking-tight leading-tight md:leading-tight lg:leading-tight;
+  @apply font-sans antialiased text-black bg-white text-[15px] md:text-[19px] lg:text-[21px] tracking-tight md:tracking-tight lg:tracking-tight leading-tight md:leading-tight lg:leading-tight;
+  overscroll-behavior: none!important;
 }
 
 @supports  (height: 100dvh) {
@@ -36,4 +37,8 @@ body {
   content: "";
   animation: cursor-blink 0.35s steps(2) infinite;
   @apply bg-black w-[1px] h-[13px] inline-block ml-[3px];
+}
+
+canvas {
+@apply w-full max-w-full h-full max-h-full !important;
 }
