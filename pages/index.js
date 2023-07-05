@@ -64,9 +64,8 @@ export default function Home() {
             <div className="p-3 px-4 w-full">
               <div className="grid grid-cols-12">
                 <div className={`col-start-1 col-span-3`}>
-                  <Link href="/" aria-label="Navigate to the home page" className="inline-block group">
+                  <Link href="/" aria-label="Navigate to the home page" className="inline-block">
                     Isaac Powell
-                    <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                   </Link>
                 </div>
 

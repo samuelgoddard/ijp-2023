@@ -64,34 +64,18 @@ export default function Info() {
             <div className="p-3 px-4 w-full">
               <div className="grid grid-cols-12">
                 <div className={`col-start-1 col-span-2`}>
-                  <Link href="/" aria-label="Navigate to the home page" className="inline-block group">
+                  <Link href="/" aria-label="Navigate to the home page" className="inline-block">
                     Isaac Powell
-                    <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                   </Link>
                 </div>
 
-                <div className="col-start-3 lg:col-start-3 col-span-3 lg:col-span-3 hidden lg:block">
+                <div className="col-start-3 lg:col-start-3 col-span-3 lg:col-span-3 hidden lg:block relative">
                   { hovered && (
-                    <div className="hidden lg:block lg:w-10/12 xl:w-9/12 2xl:w-8/12">
+                    <div className="hidden lg:block lg:w-10/12 xl:w-9/12 2xl:w-8/12 absolute top-0 left-0">
                       {/* <Image src="/images/ijp-hover-art-dir.jpg" width={499} height={651} /> */}
                       <PixelateSimple image="/images/ijp-hover-art-dir.jpg" w={499} h={651} />
                     </div>
                   )}
-                </div>
-
-                <div className="col-start-5 lg:col-start-7 col-span-4 lg:col-span-4 text-center lg:text-left">
-                  <span>
-                    <span>
-                      Freelance Designer
-                      {/* <TypeAnimation
-                        sequence={[
-                          'Freelance Designer'
-                        ]}
-                        cursor={false}
-                        speed={{type: 'keyStrokeDelayInMs', value: 35}}
-                      /> */}
-                    </span>
-                  </span>
                 </div>
 
                 <div className={`col-start-11 col-span-2`}>
