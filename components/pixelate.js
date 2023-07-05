@@ -12,7 +12,7 @@ export default function Pixelate() {
 
   useEffect(() => {
     let speed = 150
-    let speedReel = 500
+    let speedReel = 700
 
     if (longIntroContext) {
       const i_id2 = setInterval(() => {
