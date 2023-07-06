@@ -7,6 +7,7 @@ import { LongIntroContext } from '@/context/longIntro';
 import SanityPageService from '@/services/sanityPageService'
 import { infoQuery } from '@/helpers/queries'
 import dynamic from 'next/dynamic';
+import PixelateSimple from '@/components/pixelateSimple';
 
 const Clock = dynamic(() => import('react-live-clock'), { ssr: false });
 
@@ -59,13 +60,65 @@ export default function Info(initialData) {
     }
   }
 
+  let hoverImage = null
+
+  if (currentListItem == 0) {
+    hoverImage = {
+      src: "/images/IJP-Art-Direction.jpg",
+      w: 499,
+      h: 651
+    }
+  } else if (currentListItem == 1) {
+    hoverImage = {
+      src: "/images/IJP-Strategy.jpg",
+      w: 496,
+      h: 588
+    }
+  } else if (currentListItem == 2) {
+    hoverImage = {
+      src: "/images/IJP-Branding.jpg",
+      w: 586,
+      h: 390
+    }
+  } else if (currentListItem == 3) {
+    hoverImage = {
+      src: "/images/IJP-Website-Design.jpg",
+      w: 546,
+      h: 546
+    }
+  } else if (currentListItem == 4) {
+    hoverImage = {
+      src: "/images/IJP-Interaction.jpg",
+      w: 586,
+      h: 404
+    }
+  }
+  
   return (
     <Layout>
       <NextSeo title={info.title} />
       
       <LazyMotion features={domAnimation}>
         <m.div variants={container} initial="initial" animate="enter" exit="exit">
-          <div className="flex flex-col min-h-screen">          
+          <div className="p-3 px-4 w-full absolute top-0 left-0 right-0">
+            <div className="grid grid-cols-12">
+              <div className={`col-start-1 col-span-2`}>
+              </div>
+
+              <div className="col-start-3 lg:col-start-3 col-span-3 lg:col-span-3 hidden lg:block relative">
+                { (hovered && hoverImage) && (
+                  <div className="hidden lg:block lg:w-10/12 xl:w-9/12 2xl:w-8/12 absolute top-0 left-0">
+                    <PixelateSimple image={hoverImage.src} w={hoverImage.w} h={hoverImage.h} />
+                  </div>
+                )}
+              </div>
+
+              <div className={`col-start-11 col-span-2`}>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col min-h-screen">
             <article className="w-full mt-auto pt-40 lg:pt-16 mb-16 lg:mb-0">
               <m.div variants={item} className={`w-full grid grid-cols-5 lg:grid-cols-12 p-3 px-3 lg:px-4 mb-8 md:mb-6`}>
                 <span className="block col-span-5 lg:col-span-6 mb-6 lg:mb-0">

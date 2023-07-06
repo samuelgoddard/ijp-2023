@@ -7,6 +7,14 @@ export default {
     locale: 'en_GB',
     url: 'https://ijpowell.co.uk/',
     site_name: 'Interaction, Brand, Art Direction - Isaac Powell',
+    images: [
+      {
+        url: 'https://ijp-2023.vercel.app/images/social.jpg',
+        width: 1200,
+        height: 630,
+        alt: `Isaac Powell Logo`,
+      },
+    ],
   },
   twitter: {
     handle: '@samuelgoddard',

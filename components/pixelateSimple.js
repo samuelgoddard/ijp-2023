@@ -23,7 +23,7 @@ export default function PixelateSimple({image, w, h}) {
 
   return(
     <div className="relative w-full overflow-hidden">
-      <Image priority quality={80} className="w-full" src={image} width={w} height={h} alt="Pocket pieces" />
+      <Image quality={85} className="w-full" src={image} width={w} height={h} sizes={`(max-width: 1024px) 33vw,35vw`} alt="Pocket pieces" />
 
       { !pixelSize == 0 && (
         <div className={`absolute inset-0 w-full h-full z-[11]`}>
