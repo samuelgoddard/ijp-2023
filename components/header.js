@@ -5,7 +5,7 @@ export default function Header() {
   const router = useRouter()
 
   return (
-    <header className="p-3 px-3 lg:px-4 absolute top-0 left-0 right-0 w-full">
+    <header className="p-3 px-3 lg:px-4 absolute top-0 left-0 right-0 w-full z-[10]">
       <div className="grid grid-cols-12">
         <div className={`col-start-1 col-span-4 lg:col-span-3`}>
           <Link href="/" aria-label="Navigate to the home page" className="inline-block a11y-focus">

@@ -67,7 +67,7 @@ export default function Info(initialData) {
       
       <LazyMotion features={domAnimation}>
         <m.div variants={container} initial="initial" animate="enter" exit="exit">
-          <div className="p-3 px-4 w-full absolute top-0 left-0 right-0">
+          <div className="p-3 px-4 w-full absolute top-0 left-0 right-0 z-[1]">
             <div className="grid grid-cols-12">
               <div className={`col-start-1 col-span-2`}>
               </div>
