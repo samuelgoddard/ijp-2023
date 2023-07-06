@@ -5,9 +5,12 @@ import { IntroContext } from 'context/intro'
 import { useContext, useEffect } from 'react'
 import Pixelate from '@/components/pixelate'
 import { LongIntroContext } from '@/context/longIntro'
-import Clock from 'react-live-clock';
 import SanityPageService from '@/services/sanityPageService'
 import { homeQuery } from '@/helpers/queries'
+import dynamic from 'next/dynamic';
+
+const Clock = dynamic(() => import('react-live-clock'), { ssr: false });
+
 const pageService = new SanityPageService(homeQuery)
 
 export default function Home(initialData) {
@@ -98,7 +101,7 @@ export default function Home(initialData) {
                   <m.div variants={item} custom={6} className={`lg:col-start-4 col-span-12 lg:col-span-6 hidden lg:block`}>
                     <span className="block lg:mx-auto lg:text-center flex-1">
                       <span className="block lg:mx-auto lg:text-center flex-1">
-                        <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
+                        <Clock noSsr={true} format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
                       </span>
                     </span>
                   </m.div>
@@ -115,7 +118,7 @@ export default function Home(initialData) {
                   <m.div variants={item} custom={6} className={`lg:col-start-4 col-span-12 lg:col-span-6 block lg:hidden`}>
                     <span className="block lg:mx-auto lg:text-center flex-1">
                       <span className="block lg:mx-auto lg:text-center flex-1">
-                        <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
+                        <Clock noSsr={true} format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
                       </span>
                     </span>
                   </m.div>

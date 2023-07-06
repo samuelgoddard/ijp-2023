@@ -2,14 +2,13 @@ import Layout from '@/components/layout'
 import { NextSeo } from 'next-seo'
 import { useContext, useEffect, useState } from 'react'
 import { IntroContext } from '@/context/intro'
-import Link from 'next/link';
 import { domAnimation, LazyMotion, m, useReducedMotion } from 'framer-motion';
 import { LongIntroContext } from '@/context/longIntro';
-import Clock from 'react-live-clock';
-import Image from 'next/image';
-import PixelateSimple from '@/components/pixelateSimple';
 import SanityPageService from '@/services/sanityPageService'
 import { infoQuery } from '@/helpers/queries'
+import dynamic from 'next/dynamic';
+
+const Clock = dynamic(() => import('react-live-clock'), { ssr: false });
 
 const pageService = new SanityPageService(infoQuery)
 
@@ -155,7 +154,7 @@ export default function Info(initialData) {
                 <m.div variants={item} custom={6} className={`lg:col-start-7 col-span-12 lg:col-span-4 hidden lg:block`}>
                   <span className="block  flex-1">
                     <span className="block flex-1">
-                      <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
+                      <Clock noSsr={true} format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
                     </span>
                   </span>
                 </m.div>
@@ -172,7 +171,7 @@ export default function Info(initialData) {
                 <m.div variants={item} custom={6} className={`lg:col-start-4 col-span-12 lg:col-span-6 block lg:hidden`}>
                   <span className="block lg:mx-auto lg:text-center flex-1">
                     <span className="block lg:mx-auto lg:text-center flex-1">
-                      <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
+                      <Clock noSsr={true} format={'HH:mm:ss'} ticking={true} timezone={'Europe/London'} />&nbsp;GMT
                     </span>
                   </span>
                 </m.div>
