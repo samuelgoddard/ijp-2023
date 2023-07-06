@@ -12,7 +12,7 @@ export default function SanityImageResponsive({ image, className, alt, priority,
 	return (
     <figure className={`image bg-black/10 ${className} relative overflow-hidden`}>
       <Image
-        src={imageProps?.src} 
+        src={imageProps?.src}
         className={`${className}`}
         quality={80}
         sizes={sizes ? sizes : `(max-width: 1024px) 90vw,55vw`}
