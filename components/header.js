@@ -5,13 +5,38 @@ export default function Header() {
   const router = useRouter()
 
   return (
-    <header className="p-3 px-4 fixed top-0 left-0 right-0 w-full z-10">
+    <header className="p-3 px-4 fixed top-0 left-rogt">
       <div className="grid grid-cols-12">
         <div className="col-start-1 col-span-3">
           <Link href="/" aria-label="Navigate to the home page">
             Isaac Powell
           </Link>
         </div>
+        
+          {router.asPath == '/' && (
+            <div className="col-start-4 col-span-6">
+              <span className="block mx-auto text-center flex-1">
+                <span>Freelance Designer<span className="hidden lg:inline"> <span className="font-arial">&mdash;</span> Art Direction, Brand, Interactive</span></span>
+              </span>
+            </div>
+          )}
+          
+          {router.asPath !== '/' && (
+            <div className="col-start-5 lg:col-start-7 col-span-4 lg:col-span-4 text-center lg:text-left">
+              <span className="block">
+                <span>
+                  Freelance Designer
+                  {/* <TypeAnimation
+                    sequence={[
+                      'Freelance Designer'
+                    ]}
+                    cursor={false}
+                    speed={{type: 'keyStrokeDelayInMs', value: 35}}
+                  /> */}
+                </span>
+              </span>
+            </div>
+          )}
         
         <div className="col-start-11 col-span-2">
           <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-auto justify-end">

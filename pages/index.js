@@ -1,5 +1,5 @@
 import Layout from '@/components/layout'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { IntroContext } from 'context/intro'
 import { useContext, useEffect, useState } from 'react'
@@ -16,20 +16,21 @@ export default function Home(initialData) {
   const { data: { home }  } = pageService.getPreviewHook(initialData)()
   const [introContext, setIntroContext] = useContext(IntroContext);
   const [longIntroContext, setLongIntroContext] = useContext(LongIntroContext);
+  const shouldReduceMotion = useReducedMotion()
   
   useEffect(() => {
     setTimeout(() => {
       setIntroContext(true)
-    }, 1200);
+    }, shouldReduceMotion ? 0 : 1200);
     setTimeout(() => {
       setLongIntroContext(true)
-    }, 1200);
+    }, shouldReduceMotion ? 0 : 1200);
   },[setIntroContext, setLongIntroContext]);
 
   const container = {
     enter: {
       transition: {
-        staggerChildren: 0.125,
+        staggerChildren: shouldReduceMotion ? 0 : 0.125,
         delayChildren: introContext ? 0.125 : 1.1,
         staggerDirection: 1
       }
@@ -69,7 +70,7 @@ export default function Home(initialData) {
             <div className="p-3 px-3 lg:px-4 w-full">
               <div className="grid grid-cols-12">
                 <div className={`col-start-1 col-span-4 lg:col-span-3`}>
-                  <Link href="/" aria-label="Navigate to the home page" className="inline-block">
+                  <Link href="/" aria-label="Navigate to the home page" className="inline-block a11y-focus">
                     Isaac Powell
                   </Link>
                 </div>
@@ -83,14 +84,14 @@ export default function Home(initialData) {
 
                 <div className={`col-start-11 col-span-2`}>
                   <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-auto justify-end">
-                    <Link href="/" aria-label="Navigate to the home page" className="group">
+                    <Link href="/" aria-label="Navigate to the home page" className="group a11y-focus">
                       <span className="flex lg:flex-wrap items-center">
                         <span className={`w-[13px] md:w-[13px] lg:w-[15px] h-[13px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px] translate-y-[-10%] md:translate-y-0 bg-black`}></span>
                         <span className="flex-1">Reel <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span></span>
                       </span>
                     </Link>
 
-                    <Link href="/info" aria-label="Navigate to the info page" className="group">
+                    <Link href="/info" aria-label="Navigate to the info page" className="group a11y-focus">
                       <span className="flex items-center">
                         <span className={`w-[13px] md:w-[13px] lg:w-[15px] h-[13px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px] translate-y-[-10%] md:translate-y-0`}></span>
                         <span className="flex-1">Info <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span></span>
@@ -118,15 +119,15 @@ export default function Home(initialData) {
                   </m.div>
 
                   <m.div variants={item} className={`lg:col-start-1 col-span-12 lg:col-span-3 flex space-x-1 mb-2 lg:mb-0`}>
-                    <a href={home.contact.instagram} target="_blank" rel="noopener noreferrer" className="group inline-block">
+                    <a href={home.contact.instagram} target="_blank" rel="noopener noreferrer" className="group inline-block a11y-focus">
                       Instagram,
                       <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                     </a>
-                    <a href={home.contact.threads} target="_blank" rel="noopener noreferrer" className="group inline-block">
+                    <a href={home.contact.threads} target="_blank" rel="noopener noreferrer" className="group inline-block a11y-focus">
                       Threads<span className="inline lg:hidden">,</span>
                       <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                     </a>
-                    <a href={`mailto:${home.contact.emailAddress}`} className="group inline-block lg:hidden">
+                    <a href={`mailto:${home.contact.emailAddress}`} className="group a11y-focus inline-block lg:hidden">
                       Send An Email
                       <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                     </a>
@@ -142,7 +143,7 @@ export default function Home(initialData) {
                   
                   <m.div variants={item} custom={7} className={`lg:col-start-11 col-span-12 lg:col-span-2 hidden lg:block`}>
                     <div className="lg:ml-auto w-auto lg:text-right">
-                      <a href={`mailto:${home.contact.emailAddress}`} className="group inline-block">
+                      <a href={`mailto:${home.contact.emailAddress}`} className="group inline-block a11y-focus">
                         <span className="hidden lg:inline">Send An </span>Email
                         <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span>
                       </a>

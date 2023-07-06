@@ -3,6 +3,7 @@ import { LongIntroContext } from "@/context/longIntro";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { ImagePixelated } from "react-pixelate";
+import { useReducedMotion } from "framer-motion"
 import SanityImageResponsive from "./sanity-image-responsive";
 import src from '/public/images/IJP-REEL-01.jpg'
 
@@ -10,17 +11,18 @@ export default function Pixelate({images}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [longIntroContext, setLongIntroContext] = useContext(LongIntroContext);
   const [pixelSize, setPixelSize] = useState(100);
+  const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
     let speed = 150
-    let speedReel = 700
+    let speedReel = shouldReduceMotion ? 2000 : 900
 
     if (longIntroContext) {
       const i_id2 = setInterval(() => {
         if (currentImage == (images.length)) {
           setCurrentImage(0)
         } else {
-          setCurrentImage((longIntroContext && pixelSize == 0) ? currentImage => currentImage+1 : currentImage => currentImage)
+          setCurrentImage((longIntroContext && (pixelSize == 0 || shouldReduceMotion)) ? currentImage => currentImage+1 : currentImage => currentImage)
         }
       }, speedReel);
 

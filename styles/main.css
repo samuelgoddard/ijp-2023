@@ -21,7 +21,7 @@ body {
 /* Macbook Air */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
   body {
-    @apply text-[19px];
+    @apply text-[17px];
   }
 }
 
@@ -47,9 +47,13 @@ body {
 }
 
 canvas {
-@apply w-full max-w-full h-full max-h-full !important;
+  @apply w-full max-w-full h-full max-h-full !important;
 }
 
 button {
   @apply tracking-tight md:tracking-tight lg:tracking-tight leading-tight md:leading-tight lg:leading-tight;
+}
+
+.a11y-focus {
+  @apply outline-none border-none focus-visible:ring-2 focus-visible:ring-black ring-offset-2 ring-offset-white;
 }

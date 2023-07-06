@@ -1,5 +1,5 @@
 import '@/styles/main.css'
-import { LazyMotion, m, domAnimation, AnimatePresence } from 'framer-motion'
+import { LazyMotion, m, domAnimation, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import { AntiqueLegacy } from '@/helpers/fonts';
@@ -7,9 +7,11 @@ import SEO from '@/helpers/seo.config';
 import { IntroContext } from '@/context/intro'
 import { LongIntroContext } from '@/context/longIntro'
 import { useEffect, useState } from 'react';
+import Header from '@/components/header';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+  const shouldReduceMotion = useReducedMotion()
   const [introText1, setIntroText1] = useState(false)
   const [introText2, setIntroText2] = useState(false)
   const [introText3, setIntroText3] = useState(false)
@@ -30,7 +32,7 @@ export default function App({ Component, pageProps }) {
     },
     hidden: { 
       opacity: 0,
-      transition: { delay: 1.2, duration: 0, ease: [0.83, 0, 0.17, 1] }
+      transition: { delay: shouldReduceMotion ? 0 : 1.2, duration: 0, ease: [0.83, 0, 0.17, 1] }
     }
   }
 
