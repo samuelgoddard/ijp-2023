@@ -150,6 +150,8 @@ export default function App({ Component, pageProps }) {
               )}
             </LazyMotion>
 
+            <Header />
+
             <AnimatePresence mode="wait" initial={router.asPath == '/' ? true : false}>
               <Component {...pageProps} key={router.asPath} />
             </AnimatePresence>

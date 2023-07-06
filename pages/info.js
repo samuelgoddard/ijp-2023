@@ -66,44 +66,7 @@ export default function Info(initialData) {
       
       <LazyMotion features={domAnimation}>
         <m.div variants={container} initial="initial" animate="enter" exit="exit">
-          <div className="flex flex-col min-h-screen">
-            <div className="p-3 px-3 lg:px-4 w-full">
-              <div className="grid grid-cols-12">
-                <div className={`col-start-1 col-span-4 lg:col-span-2`}>
-                  <Link href="/" aria-label="Navigate to the home page" className="inline-block a11y-focus">
-                    Isaac Powell
-                  </Link>
-                </div>
-
-                <div className="col-start-3 lg:col-start-3 col-span-3 lg:col-span-3 hidden lg:block relative">
-                  { hovered && (
-                    <div className="hidden lg:block lg:w-9/12 xl:w-8/12 2xl:w-7/12 absolute top-0 left-0 max-w-[260px]">
-                      {/* <Image src="/images/ijp-hover-art-dir.jpg" width={499} height={651} /> */}
-                      <PixelateSimple image="/images/ijp-hover-art-dir.jpg" w={499} h={651} />
-                    </div>
-                  )}
-                </div>
-
-                <div className={`col-start-11 col-span-2`}>
-                  <nav className="ml-auto flex space-x-[8px] md:space-x-[12px] w-auto justify-end">
-                    <Link href="/" aria-label="Navigate to the home page" className="group a11y-focus">
-                      <span className="flex items-center">
-                        <span className={`w-[13px] md:w-[13px] lg:w-[15px] h-[13px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px] translate-y-[-10%] md:translate-y-0`}></span>
-                        <span className="flex-1">Reel <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span></span>
-                      </span>
-                    </Link>
-
-                    <Link href="/info" aria-label="Navigate to the info page" className="group a11y-focus">
-                      <span className="flex items-center">
-                        <span className={`w-[13px] md:w-[13px] lg:w-[15px] h-[13px] md:h-[13px] lg:h-[15px] rounded-full border border-black mr-[5px] translate-y-[-10%] md:translate-y-0 bg-black`}></span>
-                        <span className="flex-1">Info <span className="block h-[1px] bg-black w-0 group-hover:w-full transition-all ease-in-out duration-[400ms]"></span></span>
-                      </span>
-                    </Link>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          
+          <div className="flex flex-col min-h-screen">          
             <article className="w-full mt-auto pt-40 lg:pt-16 mb-16 lg:mb-0">
               <m.div variants={item} className={`w-full grid grid-cols-5 lg:grid-cols-12 p-3 px-3 lg:px-4 mb-8 md:mb-6`}>
                 <span className="block col-span-5 lg:col-span-6 mb-6 lg:mb-0">
