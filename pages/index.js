@@ -2,14 +2,12 @@ import Layout from '@/components/layout'
 import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { IntroContext } from 'context/intro'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import Pixelate from '@/components/pixelate'
-import Link from 'next/link'
 import { LongIntroContext } from '@/context/longIntro'
 import Clock from 'react-live-clock';
 import SanityPageService from '@/services/sanityPageService'
 import { homeQuery } from '@/helpers/queries'
-
 const pageService = new SanityPageService(homeQuery)
 
 export default function Home(initialData) {
@@ -70,7 +68,6 @@ export default function Home(initialData) {
             <article className="w-full mt-auto">
               <div className="flex flex-wrap w-full items-center justify-center">
                 <m.div variants={imageItem} custom={4} className={`w-full md:w-[80dvh] lg:w-[80dvh] max-w-[900px] px-3 lg:px-12 pt-[50px]`}>
-                  {/* <Reel /> */}
                   <Pixelate images={home.reelImages} />
                 </m.div>
               </div>

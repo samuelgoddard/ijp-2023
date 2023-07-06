@@ -15,6 +15,7 @@ export default function SanityImageResponsive({ image, className, alt, priority,
         src={imageProps?.src}
         className={`${className} will-change-transform`}
         quality={75}
+        sizes={sizes ? sizes : `(max-width: 1024px) 90vw,55vw`}
         width={image?.asset.metadata.dimensions.width}
         height={image?.asset.metadata.dimensions.height}
         {...(priority ? {priority: true} : {})}

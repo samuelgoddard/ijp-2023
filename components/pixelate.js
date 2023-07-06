@@ -43,12 +43,12 @@ export default function Pixelate({images}) {
 
   return(
     <div className="relative w-full overflow-hidden grayscale">
-      <Image priority quality={75} className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
+      <Image priority quality={75} className="w-full" src={src} width={1396} height={962} sizes={`(max-width: 1024px) 90vw,65vw`} alt="Pocket pieces" />
       
       {images.map((e, i) => {
         return (
           <div className={`absolute inset-0 ${i == currentImage ? 'z-[10]' : 'z-[1]'}`} key={i}>
-            <SanityImageResponsive className="w-full" image={e} />
+            <SanityImageResponsive className="w-full" image={e} sizes={`(max-width: 1024px) 90vw,65vw`} />
           </div>
         )
       })}
