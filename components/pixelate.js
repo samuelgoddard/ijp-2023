@@ -43,7 +43,7 @@ export default function Pixelate({images}) {
 
   return(
     <div className="relative w-full overflow-hidden grayscale">
-      <Image priority quality={75} className="w-full" src={src} width={1396} height={962} sizes={`(max-width: 1024px) 90vw,65vw`} alt="Pocket pieces" />
+      <Image priority quality={80} className="w-full" src={src} width={1396} height={962} sizes={`(max-width: 1024px) 90vw,65vw`} alt="Pocket pieces" />
       
       {images.map((e, i) => {
         return (
