@@ -8,6 +8,7 @@ import SanityPageService from '@/services/sanityPageService'
 import { infoQuery } from '@/helpers/queries'
 import dynamic from 'next/dynamic';
 import PixelateSimple from '@/components/pixelateSimple';
+import SanityImageResponsive from '@/components/sanity-image-responsive';
 
 const Clock = dynamic(() => import('react-live-clock'), { ssr: false });
 
@@ -59,40 +60,6 @@ export default function Info(initialData) {
       transition: { duration: 0 }
     }
   }
-
-  let hoverImage = null
-
-  if (currentListItem == 0) {
-    hoverImage = {
-      src: "/images/IJP-Art-Direction.jpg",
-      w: 499,
-      h: 651
-    }
-  } else if (currentListItem == 1) {
-    hoverImage = {
-      src: "/images/IJP-Strategy.jpg",
-      w: 496,
-      h: 588
-    }
-  } else if (currentListItem == 2) {
-    hoverImage = {
-      src: "/images/IJP-Branding.jpg",
-      w: 586,
-      h: 390
-    }
-  } else if (currentListItem == 3) {
-    hoverImage = {
-      src: "/images/IJP-Website-Design.jpg",
-      w: 546,
-      h: 546
-    }
-  } else if (currentListItem == 4) {
-    hoverImage = {
-      src: "/images/IJP-Interaction.jpg",
-      w: 586,
-      h: 404
-    }
-  }
   
   return (
     <Layout>
@@ -106,11 +73,13 @@ export default function Info(initialData) {
               </div>
 
               <div className="col-start-3 lg:col-start-3 col-span-3 lg:col-span-3 hidden lg:block relative">
-                { (hovered && hoverImage) && (
-                  <div className="hidden lg:block lg:w-10/12 xl:w-9/12 2xl:w-8/12 absolute top-0 left-0">
-                    <PixelateSimple image={hoverImage.src} w={hoverImage.w} h={hoverImage.h} />
-                  </div>
-                )}
+                {info.capabilities.map((e, i) => {
+                  return (
+                    <div className={`hidden lg:block lg:w-10/12 xl:w-9/12 2xl:w-8/12 absolute top-0 left-0 ${(currentListItem == i && hovered) ? 'opacity-100' : 'opacity-0' }`} key={i}>
+                      <SanityImageResponsive image={e.image} sizes={`(max-width: 1024px) 90vw,60vw`} />
+                    </div>
+                )
+                })}
               </div>
 
               <div className={`col-start-11 col-span-2`}>
@@ -140,7 +109,7 @@ export default function Info(initialData) {
                     <ul>
                       {info.capabilities.map((e, i) => {
                         return (
-                          <m.li key={i} variants={item} className={`text-black ${(hovered && currentListItem != i) && 'lg:text-opacity-30' } ${(hovered && currentListItem == i) && 'lg:text-opacity-100'}`}><button className="cursor-text a11y-focus" onMouseEnter={()=> handleHover(i)} onMouseLeave={()=>handleHoverLeave()}>{e}</button></m.li>    
+                          <m.li key={i} variants={item} className={`text-black ${(hovered && currentListItem != i) && 'lg:text-opacity-30' } ${(hovered && currentListItem == i) && 'lg:text-opacity-100'}`}><button className="cursor-text a11y-focus" onMouseEnter={()=> handleHover(i)} onMouseLeave={()=>handleHoverLeave()}>{e.text}</button></m.li>    
                         )
                       })}
                     </ul>

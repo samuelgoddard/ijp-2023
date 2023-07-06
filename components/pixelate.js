@@ -1,11 +1,9 @@
-import { IntroContext } from "@/context/intro";
+
 import { LongIntroContext } from "@/context/longIntro";
-import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { ImagePixelated } from "react-pixelate";
 import { useReducedMotion } from "framer-motion"
 import SanityImageResponsive from "./sanity-image-responsive";
-import src from '/public/images/IJP-REEL-01.jpg'
 
 export default function Pixelate({images}) {
   const [currentImage, setCurrentImage] = useState(0);
@@ -42,8 +40,8 @@ export default function Pixelate({images}) {
   },[currentImage, pixelSize, longIntroContext]);
 
   return(
-    <div className="relative w-full overflow-hidden grayscale hover:grayscale-0">
-      <Image priority quality={80} className="w-full" src={src} width={1396} height={962} sizes={`(max-width: 1024px) 90vw,65vw`} alt="Image" />
+    <div className="relative w-full overflow-hidden grayscale hover:grayscale-0 transition-all ease-in-out duration-[1000ms]">
+      <SanityImageResponsive priority className="w-full" image={images[0]} sizes={`(max-width: 1024px) 90vw,65vw`} alt="Image" />
       
       {images.map((e, i) => {
         return (

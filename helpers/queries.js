@@ -32,7 +32,20 @@ export const infoQuery = `{
   "info": *[_type == "info"][0]{
     title,
     biography,
-    capabilities[],
+    capabilities[] {
+      text,
+      image {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+    },
     awards[] {
       awardTimesWon,
       awardWebsite,
