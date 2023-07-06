@@ -3,9 +3,10 @@ import { LongIntroContext } from "@/context/longIntro";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import { ImagePixelated } from "react-pixelate";
+import SanityImageResponsive from "./sanity-image-responsive";
 import src from '/public/images/IJP-REEL-01.jpg'
 
-export default function Pixelate() {
+export default function Pixelate({images}) {
   const [currentImage, setCurrentImage] = useState(0);
   const [longIntroContext, setLongIntroContext] = useContext(LongIntroContext);
   const [pixelSize, setPixelSize] = useState(100);
@@ -16,7 +17,7 @@ export default function Pixelate() {
 
     if (longIntroContext) {
       const i_id2 = setInterval(() => {
-        if (currentImage == (28 - 1)) {
+        if (currentImage == (images.length)) {
           setCurrentImage(0)
         } else {
           setCurrentImage((longIntroContext && pixelSize == 0) ? currentImage => currentImage+1 : currentImage => currentImage)
@@ -40,12 +41,12 @@ export default function Pixelate() {
 
   return(
     <div className="relative w-full overflow-hidden grayscale">
-      <Image priority quality={80} className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
+      <Image priority quality={75} className="w-full" src={src} width={1396} height={962} alt="Pocket pieces" />
       
-      {Array.from(Array(28), (e, i) => {
+      {images.map((e, i) => {
         return (
           <div className={`absolute inset-0 ${i == currentImage ? 'z-[10]' : 'z-[1]'}`} key={i}>
-            <Image quality={80} className="w-full" width={1396} height={962} src={`/images/IJP-REEL-${ i < 9 ? '0' : ''}${i+1}.jpg`} alt="Arc Architects" />
+            <SanityImageResponsive className="w-full" image={e} />
           </div>
         )
       })}

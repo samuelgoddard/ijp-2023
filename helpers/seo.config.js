@@ -1,12 +1,12 @@
 export default {
-  defaultTitle: 'Boilerplate | Next x Tailwind x Motion',
+  defaultTitle: 'Interaction, Brand, Art Direction - Isaac Powell',
   description: 'A simple Next.js starter kit with Tailwind and Framer Motion.',
-  titleTemplate: '%s | Next x Tailwind x Motion',
+  titleTemplate: '%s | Isaac Powell',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://sg-next-tailwind-motion.vercel.app/',
-    site_name: 'Next x Tailwind x Motion',
+    url: 'https://ijpowell.co.uk/',
+    site_name: 'Interaction, Brand, Art Direction - Isaac Powell',
   },
   twitter: {
     handle: '@samuelgoddard',
