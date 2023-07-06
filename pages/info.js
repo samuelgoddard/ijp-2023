@@ -141,7 +141,7 @@ export default function Info(initialData) {
                     <ul>
                       {info.awards.map((e, i) => {
                         return (
-                          <m.li variants={item} className="flex">
+                          <m.li variants={item} className="flex" key={i}>
                             <span className="block">{e.awardWebsite}</span>
                             <span className="block ml-auto tabular-nums tracking-tighter">(&nbsp;{e.awardTimesWon}&nbsp;)</span>
                           </m.li>
